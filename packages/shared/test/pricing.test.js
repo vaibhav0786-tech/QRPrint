@@ -1,0 +1,2 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import { calculateQuote } from '../src/pricing.js';
+test('calculates a merchant-defined price and rejects incomplete job input', () => { const quote = calculateQuote({ pageCount: 2, copies: 3, rule: { currency: 'INR', currencyMinorUnit: 2, baseMinor: 100, perPageMinor: 50 } }); assert.equal(quote.amountMinor, 400); assert.throws(() => calculateQuote({ pageCount: 0, copies: 1, rule: {} })); });

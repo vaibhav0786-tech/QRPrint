@@ -1,0 +1,3 @@
+# Technical Architecture
+
+`apps/customer` is a Next.js/Vercel customer UI. It proxies requests only to `PRINT_API_URL`; it contains no business data or credentials. `services/api` is the Node/Express API boundary and must use PostgreSQL plus object storage for documents. A merchant-owned local service authenticates outbound to the API, receives jobs over SSE/WebSocket, downloads a time-limited document URL, calls a supported Windows print adapter, and reports state transitions. Payment is provider-webhook driven: verify signatures, persist the immutable transaction, then enqueue exactly once. A queue worker, antivirus scan, document page-counting worker, and dead-letter/retry policy are required before production.

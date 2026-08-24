@@ -1,0 +1,1 @@
+{"name":"qrprint-merchant","version":"0.2.0","private":true,"bin":{"qrprint-init":"bin/qrprint-init.js"}}

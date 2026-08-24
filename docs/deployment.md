@@ -1,0 +1,3 @@
+# Deployment Guide
+
+Deploy `apps/customer` to Vercel with `PRINT_API_URL` and a server-only `PRINT_API_KEY`. Deploy the Express API separately with PostgreSQL, object storage, a malware scanner, payment credentials/webhook secret, job queue, and TLS. Apply reviewed migrations from `database/schema.sql`; do not run seed data. Merchant services connect outbound only with rotating device credentials. Configure monitoring for payment-webhook failures, unacknowledged jobs, printer errors, and reconciliation differences. The included API returns 503 for quotes until the database/business layer is implemented; it is not production-ready payment or printing infrastructure.

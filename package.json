@@ -1,0 +1,7 @@
+{
+  "name": "qrprint-platform",
+  "private": true,
+  "version": "0.2.0",
+  "workspaces": ["apps/*", "packages/*", "services/*"],
+  "scripts": {"test": "node --test packages/shared/test/*.test.js", "check": "node --check packages/shared/src/pricing.js && node --check services/merchant/src/server.js && node --check packages/merchant-cli/bin/qrprint-init.js"}
+}

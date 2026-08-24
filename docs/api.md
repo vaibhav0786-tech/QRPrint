@@ -1,0 +1,3 @@
+# API Contract
+
+All `/v1` endpoints require merchant or signed guest authorization as appropriate. `POST /v1/uploads` returns a short-lived object-store upload URL after validating type and size. `POST /v1/quotes` accepts `{merchantSlug, documentId, specifications}` and returns `{quoteId,currency,amountMinor,expiresAt}`; the server obtains the document page count and active merchant rule. `POST /v1/jobs` creates a draft. `POST /v1/payments/session` creates a provider checkout session. `POST /v1/payments/webhook` verifies provider signatures. `GET /v1/merchant/jobs/stream` is authenticated SSE and `POST /v1/merchant/jobs/:id/status` requires idempotency keys. API error bodies are `{error:string, code?:string}`.
