@@ -1,0 +1,9 @@
+{
+  "name": "@qrprint/merchant",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/main.cjs",
+  "scripts": { "dev": "electron .", "start": "electron .", "package": "electron-builder" },
+  "dependencies": { "better-sqlite3": "^11.7.0", "electron": "^34.0.0", "qrcode": "^1.5.4" },
+  "devDependencies": { "electron-builder": "^25.1.8" }
+}
